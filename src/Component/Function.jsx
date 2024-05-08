@@ -2,21 +2,26 @@ import { useState } from "react";
 
 function ButtonFunction() {
   const [text, setText] = useState("");
+  const [isUpperCase, setisUpperCase] = useState(false);
 
-  const handleUpClick = () => {
-    setText(text.toUpperCase());
-  };
-  const handleDownClick = () => {
-    setText(text.toLowerCase());
+  const handleCaseChange = () => {
+    setText(isUpperCase ? text.toLowerCase() : text.toUpperCase());
+    setisUpperCase(!isUpperCase);
   };
 
   const handleOnChange = (event) => {
     setText(event.target.value);
+    console.log(event);
+  };
+
+  const clear = () => {
+    setText("");
   };
   return {
+    isUpperCase,
+    clear,
     text,
-    handleUpClick,
-    handleDownClick,
+    handleCaseChange,
     handleOnChange,
   };
 }
