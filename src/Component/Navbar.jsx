@@ -53,7 +53,10 @@ function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={props.toggleMode}
               />
-              <label className="form-check-label" for="flexSwitchCheckDefault">
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
                 {props.mode === "light"
                   ? "Enable Dark Mode"
                   : "Disable Dark Mode"}

@@ -2,7 +2,7 @@ import ButtonFunction from "./Function";
 
 function Form(props) {
   const { text, handleCaseChange, handleOnChange, clear, isUpperCase } =
-    ButtonFunction();
+    ButtonFunction(props.showAlert);
   return (
     <>
       <div className="container text-center">
